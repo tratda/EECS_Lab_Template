@@ -1,0 +1,91 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%                   File: eecs.sty                    %
+%                  Date: November 17, 2016            %
+%                                                     %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{eecs}[2007/03/21 LaTeX package for submission to OSA's conferences]
+
+%% packages
+\RequirePackage{geometry}
+\usepackage{color}
+\usepackage{graphicx}
+
+\geometry{letterpaper,nohead,margin=1in} %% uses geometry.sty
+\parindent1em %% em tied to font
+\parskip0pc
+\linespread{1}
+\pagestyle{empty}
+\sloppy
+
+\usepackage{setspace}
+\doublespace
+
+\usepackage[nottoc,numbib]{tocbibind}
+
+%% Add page number to center of page
+\usepackage{fancyhdr}
+\cfoot{\thepage}
+\fancyhead{}
+\renewcommand{\headrulewidth}{0pt}
+\pagestyle{fancy} 
+
+\usepackage{titlesec}
+\setcounter{secnumdepth}{3}
+%     section
+\renewcommand{\thesection}{\arabic{section}.}
+%     subsection
+\renewcommand{\thesubsection}{\arabic{section}.\arabic{subsection}.}
+%     subsubsection
+\renewcommand{\thesubsubsection}{\arabic{section}.\arabic{subsection}.\arabic{subsubsection}.}
+% New page after each section
+\titleclass{\section}{top}
+\newcommand\sectionbreak{\newpage}
+
+\marginparsep 10pt
+\topmargin 0pt \headsep .5in
+\textheight 8.1in \textwidth 6.5in
+
+\def\course#1{\gdef\@course{#1}}
+\def\coursesect#1{\gdef\@coursesect{#1}}
+\def\instructor#1{\gdef\@instructor{#1}}
+\def\@school{UNITED STATES MILITARY ACADEMY}
+\def\@location{West Point, NY 10996}
+\def\submitdate#1{\gdef\@submitdate{#1}}
+
+%%Title page elements
+\renewcommand*{\maketitle}{%
+\begin{titlepage}
+	\begin{singlespace}
+	\thispagestyle{empty}%
+	\null\vskip.5in%	
+	\begin{center}
+		\large\uppercase\expandafter{\@school}\\
+		\vfill
+		\large\uppercase\expandafter{\@title}
+		\vfill
+		\large\uppercase\expandafter{\@course\\
+		Section \@coursesect}\\        		
+		\vskip.1in
+		\large\uppercase\expandafter{\@instructor}\\
+		\vfill
+		\large BY\\
+		\vskip.1in
+		\large\uppercase\expandafter{\@author}\\
+		\vskip.2in
+		\large\uppercase\expandafter{\@location}\\
+		\vskip.2in
+		\large\uppercase\expandafter{\@submitdate}\\
+	\end{center}
+	\vskip.5in
+	\underline{\hspace*{.3in}}\ \large\uppercase\expandafter{MY DOCUMENT IDENTIFIES ALL SOURCES USED AND ASSISTANCE RECEIVED IN COMPLETING THIS ASSIGNMENT.}\\
+	\underline{\hspace*{.3in}}\ \large\uppercase\expandafter{I DID NOT USE ANY SOURCES OR ASSISTANCE REQUIRING DOCUMENTATION IN COMPLETING THIS ASSIGNMENT.}\\
+	\vskip.5in
+	\noindent SIGNATURE: \underline{\hspace*{5in}}
+	\end{singlespace}
+\end{titlepage}
+\newpage
+}
+
+%% end eecs.sty

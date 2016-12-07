@@ -1,0 +1,39 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%              File: Lab Report Format.tex            %
+%                    Date: May 2016	         		  %
+%                                                     %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\documentclass[letterpaper,10pt]{article}
+\usepackage{eecs}
+
+%% standard packages and arguments should be modified as needed
+\usepackage{amsmath,amssymb}
+\usepackage{cite,appendix}
+\usepackage{url}
+
+%%\graphicspath{{pictures/}}
+
+\begin{document}
+\input{content/title}
+
+\noappendicestocpagenum
+\tableofcontents
+
+\input{content/introduction}
+
+\input{content/theory}
+
+\input{content/test_procedure_and_equipment}
+
+\input{content/results_and_discussion}
+
+\input{content/documentation}
+
+\bibliographystyle{plain}
+\urlstyle{rm}
+\bibliography{content/bibliography}
+
+\input{content/appendix}
+
+\end{document}
